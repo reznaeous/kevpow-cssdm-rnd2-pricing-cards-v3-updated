@@ -1,8 +1,17 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
+  "folders": [
+    {
+      "path": ".",
+    },
   ],
-  "settings": {}
+  "settings": {
+    "liveSassCompile.settings.formats": [
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": null,
+        "savePathReplacementPairs": null,
+      },
+    ],
+  },
 }
