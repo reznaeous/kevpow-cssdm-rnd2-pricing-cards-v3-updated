@@ -100,8 +100,16 @@ section.pricing {
   border-radius: 1em;
   margin: 0;
 
+  &:nth-of-type(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
   &:nth-of-type(2) {
     padding-block: 3.5rem;
+  }
+  &:nth-of-type(3) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   &--light {
@@ -155,6 +163,12 @@ section.pricing {
 .plan__description {
   margin: 2em 0;
   line-height: 1.5;
+}
+
+.pricing > .button {
+  margin: {
+    top: 0.5rem;
+  }
 }
 
 /* ///////////////
