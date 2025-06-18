@@ -20,19 +20,25 @@
   --clr-accent-dark: #114243;
   --clr-gradient-light: -45deg, var(--clr-neutral-light),
     var(--clr-neutral-lighter);
+  --clr-gradient-accent: -45deg, #00a1ab, #3741a0;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
+  margin: 0;
+}
+
+section {
+  padding-block: 6rem;
+  padding-inline: 0;
 }
 
 .section-title {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 900;
-  margin-top: 3em;
-  margin-bottom: 0;
+  margin: 0;
   color: var(--clr-accent-mid);
 }
 
@@ -47,6 +53,26 @@ body {
   max-width: 1000px;
 }
 
+.bg-dark {
+  background-color: var(--clr-neutral-base);
+  color: var(--clr-neutral-lighter);
+}
+
+.bg-light {
+  --fg: var(--clr-neutral-white);
+  --bg: var(--clr-neutral-base);
+  --text-accent: var(--clr-accent-mid);
+  color: var(--clr-neutral-base);
+  background: linear-gradient(var(--clr-gradient-light));
+}
+
+.bg-accent {
+  --bg: var(--clr-neutral-white);
+  --fg: var(--clr-neutral-base);
+  color: var(--clr-neutral-white);
+  background: linear-gradient(var(--clr-gradient-accent));
+}
+
 /* ///////////////
   Buttons
   ////////////// */
@@ -57,25 +83,13 @@ body {
   border-radius: 0.25em;
   text-transform: uppercase;
   font-weight: 700;
-  background: #00a1ab;
-  color: #fff;
-}
-.button--light {
-  background: white;
-  color: #4e4e4e;
-}
-.button--dark {
-  color: white;
-  background: #4e4e4e;
+  background: var(--bg, var(--clr-accent-mid));
+  color: var(--fg, var(--clr-neutral-white));
 }
 
 /* ///////////////
   Plans
   ////////////// */
-section.pricing {
-  margin-block-end: 5rem;
-}
-
 .plans {
   display: flex;
   justify-content: center;
@@ -84,7 +98,7 @@ section.pricing {
 }
 
 .plan {
-  width: 260px;
+  width: 16.5rem;
   padding: 2em;
   border-radius: 1em;
   margin: 0;
@@ -100,29 +114,6 @@ section.pricing {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.plan--light {
-  color: var(--clr-neutral-base);
-  background: linear-gradient(var(--clr-gradient-light));
-}
-.plan--light .plan__price {
-  color: var(--clr-accent-mid);
-}
-.plan--light .button {
-  color: white;
-  background: #4e4e4e;
-}
-.plan--accent {
-  color: #fff;
-  background: linear-gradient(-45deg, #00a1ab, #3741a0);
-}
-.plan--accent .button {
-  background: white;
-  color: #4e4e4e;
-}
-.plan--dark {
-  background-color: var(--clr-neutral-base);
-  color: var(--clr-neutral-lighter);
-}
 
 .plan__title {
   text-transform: uppercase;
@@ -133,6 +124,7 @@ section.pricing {
   font-size: 3rem;
   line-height: 1;
   font-weight: 900;
+  color: var(--text-accent);
   margin: 0;
 }
 
@@ -155,8 +147,8 @@ section.pricing {
   Teams
   ////////////// */
 section.team {
-  margin-bottom: 5rem;
   padding-block-start: 1rem;
+  padding-block-end: 10rem;
   background-color: var(--clr-neutral-lighter);
 }
 section.team h2 {
@@ -170,7 +162,6 @@ section.team h2 {
 }
 
 .team-member {
-  background: #abc;
   text-align: left;
   flex: 1 1 45%;
   margin: 1em;
@@ -182,28 +173,24 @@ section.team h2 {
   padding: 0.5em;
 }
 .team-member .name {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-accent);
   margin-bottom: 0;
 }
 .team-member .position {
   margin-top: 0;
   font-size: 0.875rem;
+  font-weight: 700;
+  opacity: 0.8;
 }
 .team-member img {
   width: 10rem;
   border-radius: 0.75em;
 }
-.team-member-light {
-  background: linear-gradient(var(--clr-gradient-light));
+.team-member[data-reversed] {
   flex-direction: row-reverse;
 }
-.team-member-light .info {
+.team-member[data-reversed] .info {
   text-align: right;
-}
-.team-member-light .name {
-  color: var(--clr-accent-mid);
-}
-.team-member-dark {
-  background-color: var(--clr-neutral-base);
-  color: var(--clr-neutral-white);
 }/*# sourceMappingURL=styles.css.map */
